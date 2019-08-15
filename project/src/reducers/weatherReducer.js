@@ -3,7 +3,8 @@ const initialState = {
 
     },
     isLoading: false,
-    error: ''
+    error: '',
+    test: 'Working!'
 }
 
 export const reducer = (state = initialState, action) => {

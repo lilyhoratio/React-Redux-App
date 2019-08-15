@@ -1,12 +1,25 @@
 import React from 'react';
+import LocationForm from './components/LocationForm'
+import { getData } from './actions'
+// import LocationBookmarks from './components/LocationBookmarks'
+import { connect } from 'react-redux'
 import './App.css';
 
-function App() {
+function App(props) {
+  console.log("app props", props)
   return (
     <div className="App">
-      <h1>Dark Sky Weather App</h1> 
+      {/* <LocationBookmarks /> */}
+      <LocationForm getData={getData} />
+      <h1>{props.state.test}</h1>
     </div>
   );
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    state
+  }
+}
+export default connect(mapStateToProps, { getData })(App)
