@@ -11,8 +11,9 @@ function App(props) {
   return (
     <div className="App">
       {/* <LocationBookmarks /> */}
-      <LocationForm getData={getData} />
-      <Location isLoading={props.isLoading} weatherData={props.weatherData} />
+      <LocationForm getData={props.getData} />
+      {/* { props.isLoading ? <Loader />} : <Location /> */}
+      <Location isLoading={props.isLoading} weatherData={props.weatherData} test={props.test} />
     </div>
   );
 }
@@ -21,7 +22,8 @@ function App(props) {
 const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
-    weatherData: state.weatherData
+    weatherData: state.weatherData,
+    test: state.test
   }
 }
 export default connect(mapStateToProps, { getData })(App)

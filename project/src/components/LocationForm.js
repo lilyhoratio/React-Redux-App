@@ -1,5 +1,6 @@
 import React from 'react'
 import { getData } from '../actions'
+import Location from './Location'
 
 const LocationForm = (props) => {
     console.log("form props", props)
