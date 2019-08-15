@@ -5,7 +5,6 @@ const Location = (props) => {
     return (
         <>
             <h1>Weather</h1>
-            {props.test}
         </>
     )
 }

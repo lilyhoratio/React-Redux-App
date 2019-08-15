@@ -1,5 +1,4 @@
 import React from 'react'
-import Location from './Location'
 
 const LocationForm = (props) => {
     console.log("form props", props)
@@ -23,9 +22,8 @@ const LocationForm = (props) => {
                     // onChange={handleChange}
                     />
                 </label>
-                <button>Get Weather</button>
+                <button onClick={props.getData}>Get Weather</button>
             </form>
-            <Location />
         </>
     )
 }

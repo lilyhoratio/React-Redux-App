@@ -1,5 +1,6 @@
 import React from 'react';
 import LocationForm from './components/LocationForm'
+import Location from './components/Location'
 import { getData } from './actions'
 // import LocationBookmarks from './components/LocationBookmarks'
 import { connect } from 'react-redux'
@@ -11,7 +12,7 @@ function App(props) {
     <div className="App">
       {/* <LocationBookmarks /> */}
       <LocationForm getData={getData} />
-      <h1>{props.state.test}</h1>
+      <Location isLoading={props.isLoading} weatherData={props.weatherData} />
     </div>
   );
 }
@@ -19,7 +20,8 @@ function App(props) {
 
 const mapStateToProps = state => {
   return {
-    state
+    isLoading: state.isLoading,
+    weatherData: state.weatherData
   }
 }
 export default connect(mapStateToProps, { getData })(App)

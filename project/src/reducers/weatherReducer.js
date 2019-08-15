@@ -1,5 +1,5 @@
 const initialState = {
-    weather: {
+    weatherData: {
 
     },
     isLoading: false,
